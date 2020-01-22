@@ -1,0 +1,10 @@
+Avance2
+Grupo 4
+El grafo creado es el resultado de la transformación del arreglo 3D recibido como parámetro,
+cuyo valores de los nodos representaria el valor de los 3 puntos x,y,z. El valor de las aristas se obtienen de los nodos que son adyacentes a otros nodos, es decir,
+no existe un obstáculo entre ellos, y de esta forma hay una conexión entre ambos.
+
+Una forma eficiente pensada para solucionar este problema,es considerando el uso de lista de adyacencia, 
+una matriz de adyacencia también sería viable porque el valor de '1' representa que existe un camino entre
+los vértices, y '0' es el obstáculo, pero su gran desventaja es que ocupa mucho más espacio con un
+tiempo de O(V^2).
