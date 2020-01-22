@@ -3,3 +3,4 @@ Proyecto realizado en Python.
 Paquetes instalados:
   * numpy
   * matplotlib 
+  * networkx
