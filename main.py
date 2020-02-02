@@ -46,6 +46,11 @@ k.append(1)
 print(k)
 #f[0,0,0]=[0,0,0]
 #print(f)
+
+A=2
+a=3
+print(a)
+print(A)
 """ 
 import Grafo as g
 import random
