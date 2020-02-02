@@ -8,7 +8,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 DIMENSION=3   #Dimension de la matriz
-OBSTACULOS=22 #Obstaculos (dimension^3)-1
+OBSTACULOS=18 #Obstaculos (dimension^3)-1
 
 #Todos tienen valor 1 indicando que hay un camino
 matriz=np.ones((DIMENSION,DIMENSION,DIMENSION))
@@ -73,8 +73,27 @@ for i in range(DIMENSION**3):
             weights.append(1)
 
 
-graf=g.Graph(x,y,weights, directed=False)
-graf.print_r()
+"""graf=g.Graph(x,y,weights, directed=False)
+graf.print_r()"""
+print("Dijkstra\n")
+tiempo_inicial = time()
+G = g.Graph(x,y,weights)
+G.create_network(x, y, weights)
+G.dijkstra()
+tiempo_final = time()
+tiempo_ejecucion = tiempo_final - tiempo_inicial
+print('El tiempo de ejecucion Dijkstra con dimension {0} y obstaculo {1} fue: {2} '.format(DIMENSION,OBSTACULOS,tiempo_ejecucion) )
+G.print_distances()
+
+
+print("FloydWarshall\n")
+G1 = g.Graph(x,y,weights)
+G1.create_network(x, y, weights)
+G1.floyd_warshall()
+tiempo_final = time()
+tiempo_ejecucion = tiempo_final - tiempo_inicial
+print('El tiempo de ejecucion Floyd Warshall dimension {0} y obstaculo {1} fue: {2} '.format(DIMENSION,OBSTACULOS,tiempo_ejecucion))
+G1.print_distances()
 
 """ 
 fig1 = plt.figure()
@@ -82,18 +101,17 @@ ax1 = fig1.add_subplot(111,projection='3d')
 ax1.plot_wireframe(np.array([x]) , np.array([y]), np.array([z]))
 plt.show()
 """
-tiempo_inicial = time()
-tiempo_final = time()
-tiempo_ejecucion = tiempo_final - tiempo_inicial
-print('El tiempo de ejecucion fue:', tiempo_ejecucion)
+
+
 
 #graf.draw()
 #graf.print_r()
 
-start = (0, 0)
-end = (7, 6)
+"""start = (0, 0)
+end = (7, 6)"""
 
 #path = Astar.astar(maze, start, end)
 #print(path)
 
 #a = fc.matriz_3d(x,y,z)
+
