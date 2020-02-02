@@ -1,5 +1,6 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
+import networkx as nx
 
 class Graph:
     source = []
@@ -40,3 +41,4 @@ class Graph:
     def export(self):
         array_export = [(int(self.source[i]), int(self.target[i]), self.weight[i]) for i in range(self.source.size)]
         return array_export
+

@@ -1,6 +1,6 @@
 import funciones as fc
 import numpy as np
-
+import Grafo as g
 #xyz = int(input("Ingrese dimensión del arreglo: "))
 
 #a = fc.matriz_3d(xyz,xyz,xyz)
@@ -39,10 +39,11 @@ print(d.sum())
 for ind in h:
     d[ind[0],ind[1],ind[2]]=0
 
-indic= np.where(d=1)
-print(indic)
 
-
+k=[]
+k.append(1)
+k.append(1)
+print(k)
 #f[0,0,0]=[0,0,0]
 #print(f)
 """ 
